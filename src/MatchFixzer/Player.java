@@ -31,10 +31,8 @@ public class Player {
     public int getELO_Score(){return ELO_Score;}
 
     /* METHODS */
-    public void addMatchResult(MatchResult r){
+    public void addMatchResult(MatchResult r, int ELO_Impact){
         mh.addMatchResult(r);
-
-        //////////////////////////////////////////////// ADD ELO IMPACT
+        ELO_Score += ELO_Impact;
     }
-
 }
