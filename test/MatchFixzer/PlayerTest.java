@@ -1,28 +1,43 @@
 package MatchFixzer;
 
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PlayerTest {
     Player p = null;
 
+    @BeforeEach
+    void setup(){
+        p = new Player();
+    }
+
     @Test
     void testDefaultPlayerELO(){
-        p = new Player();
         assertEquals(p.getELO_Score(), 1000);
     }
 
     @Test
     void testDefaultPlayerELO_Impact1(){
-        p = new Player();
         p.addMatchResult(MatchResult.WON, 100);
         assertEquals(p.getELO_Score(), 1100);
     }
 
     @Test
     void testDefaultPlayerELO_Impact2(){
-        p = new Player();
         p.addMatchResult(MatchResult.WON, -100);
         assertEquals(p.getELO_Score(), 900);
+    }
+
+    @Test
+    void testDefaultName(){
+        assertEquals(p.getPlayerName(), "Un-named");
+    }
+
+    @Test
+    void testCustomName(){
+        p.setPlayerName("TEST");
+        assertEquals(p.getPlayerName(), "TEST");
     }
 }

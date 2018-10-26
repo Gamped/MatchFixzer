@@ -21,4 +21,14 @@ public class TeamTest {
     void testAverageELO() {
         assertEquals(t.getAverageELO(), 1500);
     }
+
+    @Test
+    void testNameGeneration(){
+        t.getPlayer(0).setPlayerName("TESTER");
+        t.getPlayer(1).setPlayerName("KESTER");
+        t.getPlayer(2).setPlayerName("SESTER");
+        t.makeDefaultName();
+
+        assertEquals(t.getTeamName(), "TESKESSES");
+    }
 }

@@ -7,6 +7,7 @@ public class Player {
     private int ELO_Score = 1000;
     // The history of the players matches
     private MatchHistory mh = null;
+    private String playerName = "Un-named";
 
     /* CONSTRUCTORS */
     // Default creation of player
@@ -29,6 +30,8 @@ public class Player {
 
     /* GETTERS/SETTERS */
     public int getELO_Score(){return ELO_Score;}
+    public void setPlayerName(String s){playerName = s;}
+    public String getPlayerName(){return  playerName;}
 
     /* METHODS */
     public void addMatchResult(MatchResult r, int ELO_Impact){

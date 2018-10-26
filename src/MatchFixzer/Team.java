@@ -9,6 +9,7 @@ public class Team {
     private ArrayList<Player> team = new ArrayList<>();
     private double averageELO;
     private int totalELO;
+    private String teamName = "Un-named";
 
     /* CONSTRUCTORS */
     // Team of 2 players
@@ -44,20 +45,36 @@ public class Team {
     /* GETTERS/SETTERS */
     public int getTotalELO() {return totalELO;}
     public double getAverageELO() {return averageELO;}
+    public Player getPlayer(int index){
+        if (index < team.size() && index >= 0){
+            return team.get(index);
+        } else throw new IllegalArgumentException("INVALID PLAYER INDEX!");
+    }
+    public String getTeamName(){return teamName;}
 
     /* METHODS */
     // Calculate the average ELO on the team
-    private void calAverageELO(){
+    public void calAverageELO(){
         int totalPlayers = team.size();
         calTotalELO();
         averageELO = (double)totalELO / (double)totalPlayers;
     }
 
     // Calculate the total ELO of the team
-    private void calTotalELO(){
+    public void calTotalELO(){
         totalELO = 0;
         for(Player p: team){
             totalELO += p.getELO_Score();
         }
+    }
+
+    // Make team name based on current names
+    public void makeDefaultName(){
+        String newName = "", s = "";
+        for (Player p: team){
+            s = p.getPlayerName().substring(0,3);
+            newName += s;
+        }
+        teamName = newName;
     }
 }
