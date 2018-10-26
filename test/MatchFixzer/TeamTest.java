@@ -2,6 +2,9 @@ package MatchFixzer;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TeamTest {
@@ -30,5 +33,14 @@ public class TeamTest {
         t.makeDefaultName();
 
         assertEquals(t.getTeamName(), "TESKESSES");
+    }
+
+    @Test
+    void testELORatio(){
+        Double totalRatio = new Double(0);
+        for (Double d: t.getTeamELORatio()){
+            totalRatio += d;
+        }
+       assertEquals(totalRatio, new Double(1));
     }
 }
