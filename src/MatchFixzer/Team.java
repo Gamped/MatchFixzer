@@ -14,6 +14,10 @@ public class Team {
     private String teamName = "Un-named";
 
     /* CONSTRUCTORS */
+    // Blank team
+    public Team(){
+
+    }
     // Team of 2 players
     public Team(Player p1, Player p2){
         team.add(p1);
@@ -49,8 +53,14 @@ public class Team {
     }
 
     /* GETTERS/SETTERS */
-    public int getTotalELO() {return totalELO;}
-    public double getAverageELO() {return averageELO;}
+    public int getTotalELO() {
+        calTotalELO();
+        return totalELO;
+    }
+    public double getAverageELO() {
+        calAverageELO();
+        return averageELO;
+    }
     public Player getPlayer(int index){
         if (index < team.size() && index >= 0){
             return team.get(index);
@@ -58,6 +68,7 @@ public class Team {
     }
     public String getTeamName(){return teamName;}
     public ArrayList<Double> getTeamELORatio(){return new ArrayList<>(teamELORatio);}
+    public void addPlayer(Player p){team.add(p);}
 
     /* METHODS */
     // Calculate the average ELO on the team
@@ -86,7 +97,7 @@ public class Team {
     }
 
     // Calculate the ratio between each member
-    private void calELORatio(){
+    public void calELORatio(){
         Double ratio, tELO;
         calTotalELO();
         tELO = new Double(totalELO);
