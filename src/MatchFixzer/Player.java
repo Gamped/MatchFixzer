@@ -11,17 +11,11 @@ public class Player {
 
     /* CONSTRUCTORS */
     // Default creation of player
-    public Player(){
-        mh = new MatchHistory();
-    }
+    public Player(){mh = new MatchHistory();}
     // Custom start ELO
-    public Player(int ELO){
-        ELO_Score = ELO;
-    }
+    public Player(int ELO){ELO_Score = ELO;}
     // Custom match results
-    public Player(MatchHistory priorMH){
-        mh = priorMH;
-    }
+    public Player(MatchHistory priorMH){mh = priorMH;}
     // Custom match results & ELO
     public Player(MatchHistory priorMH, int ELO){
         mh = priorMH;

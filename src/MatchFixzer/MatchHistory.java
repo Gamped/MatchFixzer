@@ -14,15 +14,11 @@ public class MatchHistory {
 
     // Makes new MatchHistory out of old list of results
     // @param oldMatchHistory: An ArrayList of previous results
-    public MatchHistory(ArrayList<MatchResult> oldMatchHistory){
-        matchHistory = oldMatchHistory;
-    }
+    public MatchHistory(ArrayList<MatchResult> oldMatchHistory){matchHistory = oldMatchHistory;}
 
     /* GETTERS/SETTERS */
     // Send a copy of the match history
-    public ArrayList<MatchResult> getMatchHistory(){
-        return new ArrayList<MatchResult>(matchHistory);
-    }
+    public ArrayList<MatchResult> getMatchHistory(){return new ArrayList<MatchResult>(matchHistory);}
 
     // Get an individual result from the match result list
     // @param index: The wished index to get
@@ -35,9 +31,7 @@ public class MatchHistory {
     /* METHODS */
     // Add a match result to the list
     // @param r: The result wished for
-    public void addMatchResult(MatchResult r){
-        matchHistory.add(r);
-    }
+    public void addMatchResult(MatchResult r){matchHistory.add(r);}
 
     // Removes a match result to the list
     // @param index: The index wished to be removed
