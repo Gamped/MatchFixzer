@@ -36,7 +36,6 @@ public class MatchMaker {
         // Will be broken if success criteria is met
         for (int i = 0; i < maxGenAlgRuns; i++){
             /* INITIALIZATION OF TEAMS */
-
             // Default variables
             tempTeams.clear();
 
@@ -68,7 +67,6 @@ public class MatchMaker {
             }
 
             /* EVALUATION */
-
             // Default bestTeams to first result, in case no teams within criteria can be made
             if (bestTeams.size() != 2) {
                 bestTeams.clear();
@@ -79,9 +77,11 @@ public class MatchMaker {
 
             // Calculate score and check if criteria is met
             for (ArrayList<Team> t: tempTeams){
-                score = evaluateTeams(t);;
+                score = evaluateTeams(t);
+
                 if (score >= minSuccess && score <= maxSuccess){
                     foundSuccess = true;
+
                     // Evaluate if it is better than current best teams
                     if (bestTeams.size() != 2){
                         if (score == 0.5){
@@ -112,15 +112,18 @@ public class MatchMaker {
         // Crossover & mutation are on purpose left out of "minimum viable product" version
         //
         }
+
         if (foundSuccess != true){
             System.out.print("Did not manage to find teams within criteria :(");
         }
+
         return bestTeams;
     }
 
     // Fills an arrayList into a linked list
     private LinkedList<Player> fillList(ArrayList<Player> al){
         LinkedList<Player> tempList = new LinkedList<>();
+
         for (Player p: al){
             tempList.add(p);
         }

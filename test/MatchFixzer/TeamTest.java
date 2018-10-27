@@ -3,8 +3,6 @@ package MatchFixzer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TeamTest {
@@ -16,14 +14,10 @@ public class TeamTest {
     }
 
     @Test
-    void testTotalELO() {
-        assertEquals(t.getTotalELO(), 4500);
-    }
+    void testTotalELO() {assertEquals(t.getTotalELO(), 4500);}
 
     @Test
-    void testAverageELO() {
-        assertEquals(t.getAverageELO(), 1500);
-    }
+    void testAverageELO() {assertEquals(t.getAverageELO(), 1500);}
 
     @Test
     void testNameGeneration(){
@@ -38,9 +32,11 @@ public class TeamTest {
     @Test
     void testELORatio(){
         Double totalRatio = new Double(0);
+
         for (Double d: t.getTeamELORatio()){
             totalRatio += d;
         }
+
        assertEquals(totalRatio, new Double(1));
     }
 }

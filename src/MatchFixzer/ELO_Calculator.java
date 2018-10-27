@@ -24,30 +24,18 @@ public class ELO_Calculator {
 
     // Affect the ELO for all players upon receiving a result of a match
     public void affectELOAfterResult(ArrayList<Team> teams, MatchResult rForFirstTeam){
-        int ELOimpact;
-
         // Make sure that the input is valid
         if (teams.size() != 2){ throw new IllegalArgumentException("WRONG TEAM INPUT (" + teams.size() + ")");}
 
-        // Switch based on result
+        // Switch based on result & impact teams ELO
         switch (rForFirstTeam){
             case WON:
-                // Calculate winning team impact & add the impact to them
-                ELOimpact = calELOImpact(teams.get(0).getAverageELO(), teams.get(1).getAverageELO(), MatchResult.WON);
-                impactTeamPlayers(teams.get(0), ELOimpact, MatchResult.WON);
-
-                // Calculate losing team impact & add the impact to them
-                ELOimpact = calELOImpact(teams.get(1).getAverageELO(), teams.get(0).getAverageELO(), MatchResult.LOST);
-                impactTeamPlayers(teams.get(1), ELOimpact, MatchResult.LOST);
+                impactTeamPlayers(teams.get(0), teams.get(1), MatchResult.WON);
+                impactTeamPlayers(teams.get(1), teams.get(0), MatchResult.LOST);
                 break;
             case LOST:
-                // Calculate winning team impact & add the impact to them
-                ELOimpact = calELOImpact(teams.get(1).getAverageELO(), teams.get(0).getAverageELO(), MatchResult.WON);
-                impactTeamPlayers(teams.get(1), ELOimpact, MatchResult.WON);
-
-                // Calculate losing team impact & add the impact to them
-                ELOimpact = calELOImpact(teams.get(0).getAverageELO(), teams.get(1).getAverageELO(), MatchResult.LOST);
-                impactTeamPlayers(teams.get(0), ELOimpact, MatchResult.LOST);
+                impactTeamPlayers(teams.get(1), teams.get(0), MatchResult.WON);
+                impactTeamPlayers(teams.get(0), teams.get(1), MatchResult.LOST);
                 break;
             case TIE:
                 // Do nothing to their ELO, since they tied
@@ -78,8 +66,11 @@ public class ELO_Calculator {
         return (int)impact;
     }
 
-    private void impactTeamPlayers(Team t, int impactELO, MatchResult r){
-        int i = 0;
+    private void impactTeamPlayers(Team t, Team opponent, MatchResult r){
+        int i = 0, impactELO;
+
+        impactELO = calELOImpact(t.getAverageELO(), opponent.getAverageELO(), r);
+
         for (Player p: t.getTeamPlayers()){
             p.addMatchResult(MatchResult.WON, (int)((double)impactELO * t.getPlayerELORatio(i)));
             i++;

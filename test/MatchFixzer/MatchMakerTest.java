@@ -28,7 +28,7 @@ public class MatchMakerTest {
     @Test
     void printTeamAverageEloAndTestSize(){
         teamOutput = mm.generateTeams(p, 500);
-        //System.out.print(teamOutput.get(0).getAverageELO() + " - " + teamOutput.get(1).getAverageELO());
+        // System.out.print(teamOutput.get(0).getAverageELO() + " - " + teamOutput.get(1).getAverageELO());
         assertEquals(teamOutput.size(), 2);
     }
 }
