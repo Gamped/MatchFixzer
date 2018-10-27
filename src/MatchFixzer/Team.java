@@ -68,7 +68,10 @@ public class Team {
     }
     public String getTeamName(){return teamName;}
     public ArrayList<Double> getTeamELORatio(){return new ArrayList<>(teamELORatio);}
+    public double getPlayerELORatio(int index){return teamELORatio.get(index);}
     public void addPlayer(Player p){team.add(p);}
+    // Return the actual team, as we want to have access to edit the properties of these
+    public ArrayList<Player> getTeamPlayers() {return team;}
 
     /* METHODS */
     // Calculate the average ELO on the team

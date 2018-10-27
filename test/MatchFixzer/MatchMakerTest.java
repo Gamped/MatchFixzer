@@ -12,25 +12,23 @@ public class MatchMakerTest {
 
     @BeforeEach
     void setup(){
-        mm = new MatchMaker(50, 0.01);
-        p.add(new Player(1500));
+        mm = new MatchMaker(100, 0.01);
+        p.add(new Player(4500));
         p.add(new Player(925));
         p.add(new Player(1750));
         p.add(new Player());
-        p.add(new Player(2000));
+        p.add(new Player(2600));
         p.add(new Player(2500));
         p.add(new Player(1500));
         p.add(new Player(900));
         p.add(new Player(3000));
-        p.add(new Player(500));
+        p.add(new Player(3500));
     }
-
 
     @Test
-    void printTeamTotalEloAndTestSize(){
-        teamOutput = mm.generateTeams(p, 50);
+    void printTeamAverageEloAndTestSize(){
+        teamOutput = mm.generateTeams(p, 500);
+        //System.out.print(teamOutput.get(0).getAverageELO() + " - " + teamOutput.get(1).getAverageELO());
         assertEquals(teamOutput.size(), 2);
-        System.out.print(teamOutput.get(0).getAverageELO() + " - " + teamOutput.get(1).getAverageELO());
     }
-
 }

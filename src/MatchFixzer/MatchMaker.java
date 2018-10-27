@@ -8,7 +8,6 @@ import java.util.concurrent.ThreadLocalRandom;
 public class MatchMaker {
     /* FIELDS */
     private int maxGenAlgRuns;
-    // The margin is added to the success criteria (0.5) on both sides
     private double margin;
 
     /* CONSTRUCTORS */
@@ -28,7 +27,6 @@ public class MatchMaker {
         int nextIndex;
         boolean switcher = true, foundSuccess = false;
         double minSuccess, maxSuccess, score;
-
 
         // Calculate minSuccess & maxSuccess
         minSuccess = 0.5 - margin;

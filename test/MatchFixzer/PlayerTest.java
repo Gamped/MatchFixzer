@@ -15,19 +15,19 @@ public class PlayerTest {
 
     @Test
     void testDefaultPlayerELO(){
-        assertEquals(p.getELO_Score(), 1000);
+        assertEquals(p.getELO_Score(), 2000);
     }
 
     @Test
     void testDefaultPlayerELO_Impact1(){
         p.addMatchResult(MatchResult.WON, 100);
-        assertEquals(p.getELO_Score(), 1100);
+        assertEquals(p.getELO_Score(), 2100);
     }
 
     @Test
     void testDefaultPlayerELO_Impact2(){
         p.addMatchResult(MatchResult.WON, -100);
-        assertEquals(p.getELO_Score(), 900);
+        assertEquals(p.getELO_Score(), 1900);
     }
 
     @Test

@@ -12,7 +12,7 @@ public class TeamTest {
 
     @BeforeEach
     void setup() {
-        t = new Team(new Player(), new Player(2000), new Player(1500));
+        t = new Team(new Player(1000), new Player(2000), new Player(1500));
     }
 
     @Test
