@@ -5,12 +5,8 @@ import java.util.ArrayList;
 // A class used to calculate ELO rankings
 // ELO ranking primarily based upon: https://liquipedia.net/starcraft/Elo_rating
 public class ELO_Calculator {
-    /* FIELDS */
-
     /* CONSTRUCTORS */
     public ELO_Calculator(){}
-
-    /* GETTERS/SETTERS */
 
     /* METHODS */
     // Returns the likely outcome of a match given t's perspective
@@ -66,6 +62,7 @@ public class ELO_Calculator {
         return (int)impact;
     }
 
+    // Add the result to all team players and impact their ELO rating
     private void impactTeamPlayers(Team t, Team opponent, MatchResult r){
         int i = 0, impactELO;
 

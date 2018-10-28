@@ -19,10 +19,10 @@ public class Memory {
         boolean hasValidID = false;
 
         // Check if ID is set already, else set ID
-        while (p.getPlayerID() ==  -1 && hasValidID == false){
+        while (p.getPlayerID() ==  -1 && !hasValidID){
             File tester = null;
             // Using random ID, as incremental is easy to guess
-            p.setPlayerID(ThreadLocalRandom.current().nextInt(0,Integer.MAX_VALUE));
+            p.setPlayerID(ThreadLocalRandom.current().nextInt(0, Integer.MAX_VALUE));
             tester = new File("memory/p" + Integer.toString(p.getPlayerID()) + ".txt");
             // Check if it gave an already existing ID, if not then exit loop
             if (!tester.exists()){
