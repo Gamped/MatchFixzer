@@ -87,21 +87,23 @@ public class Memory {
                     p = new Player(Integer.parseInt(lineContent[2]),Integer.parseInt(lineContent[0]), lineContent[1]);
 
                     // Read match history & add it
-                    line = br.readLine();
-                    lineContent = line.split(";");
-                    for (String s: lineContent){
-                        switch (s){
-                            case "WON":
-                                p.addMatchResult(MatchResult.WON, 0);
-                                break;
-                            case "LOST":
-                                p.addMatchResult(MatchResult.LOST, 0);
-                                break;
-                            case "TIE":
-                                p.addMatchResult(MatchResult.TIE, 0);
-                                break;
-                            default:
-                                throw new IllegalArgumentException("WRONG MATCH HISTORY NAME IN FILE!");
+                    if (br.lines().count() > 1) {
+                        line = br.readLine();
+                        lineContent = line.split(";");
+                        for (String s : lineContent) {
+                            switch (s) {
+                                case "WON":
+                                    p.addMatchResult(MatchResult.WON, 0);
+                                    break;
+                                case "LOST":
+                                    p.addMatchResult(MatchResult.LOST, 0);
+                                    break;
+                                case "TIE":
+                                    p.addMatchResult(MatchResult.TIE, 0);
+                                    break;
+                                default:
+                                    throw new IllegalArgumentException("WRONG MATCH HISTORY NAME IN FILE!");
+                            }
                         }
                     }
 

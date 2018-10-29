@@ -13,6 +13,11 @@ public class Player {
     /* CONSTRUCTORS */
     // Default creation of player
     public Player(){mh = new MatchHistory();}
+    // Name only creation of player
+    public Player(String name){
+        mh = new MatchHistory();
+        playerName = name;
+    }
     // Custom start ELO
     public Player(int ELO){
         mh = new MatchHistory();

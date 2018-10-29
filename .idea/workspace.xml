@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1d77d3e-f435-4efc-8af1-93e40db69afc" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/MatchFixzer/UI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/alien.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MatchFixzer/MatchFixzer/ELO_Calculator$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MatchFixzer/MatchFixzer/ELO_Calculator$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MatchFixzer/MatchFixzer/ELO_Calculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MatchFixzer/MatchFixzer/ELO_Calculator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MatchFixzer/MatchFixzer/Memory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MatchFixzer/MatchFixzer/Memory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/MatchFixzer/MatchFixzer/MemoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/MatchFixzer/MatchFixzer/MemoryTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MatchFixzer/ELO_Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MatchFixzer/ELO_Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MatchFixzer/MatchFixzer/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MatchFixzer/MatchFixzer/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MatchFixzer/MatchFixzer/UI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MatchFixzer/MatchFixzer/UI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MatchFixzer/Memory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MatchFixzer/Memory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MatchFixzer/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MatchFixzer/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MatchFixzer/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MatchFixzer/UI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,38 +21,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MatchHistory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MatchFixzer/MatchHistory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="UI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MatchFixzer/UI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="88" column="31" lean-forward="true" selection-start-line="88" selection-start-column="31" selection-end-line="88" selection-end-column="31" />
+            <state relative-caret-position="17">
+              <caret line="47" selection-start-line="47" selection-end-line="47" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#370#371#0" expanded="true" />
-                <element signature="e#398#399#0" expanded="true" />
+                <element signature="method#start#0;class#UI#0" />
                 <element signature="method#styleButton#0;class#UI#0" />
                 <element signature="method#setupPrimaryBackground#0;class#UI#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MatchMakerTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/MatchFixzer/MatchMakerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#saveAndExit#0;class#UI#0" />
+                <element signature="method#createPlayerUI#0;class#UI#0" />
+                <element signature="method#createPlayer#0;class#UI#0" />
+                <element signature="method#createRankingsUI#0;class#UI#0" />
+                <element signature="method#defaultStyle#0;class#UI#0" />
               </folding>
             </state>
           </provider>
@@ -63,8 +44,20 @@
       <file leaf-file-name="MemoryTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/MatchFixzer/MemoryTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state relative-caret-position="68">
               <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Memory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MatchFixzer/Memory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1785">
+              <caret line="107" column="21" selection-start-line="107" selection-start-column="21" selection-end-line="107" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -76,8 +69,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="85">
-                <caret line="5" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="45" />
+              <first_editor relative-caret-position="153">
+                <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
               </first_editor>
               <second_editor />
             </state>
@@ -114,11 +107,12 @@
         <option value="$PROJECT_DIR$/test/MatchFixzer/TeamTest.java" />
         <option value="$PROJECT_DIR$/test/MatchFixzer/MatchHistoryTest.java" />
         <option value="$PROJECT_DIR$/src/MatchFixzer/MatchMaker.java" />
-        <option value="$PROJECT_DIR$/src/MatchFixzer/Player.java" />
         <option value="$PROJECT_DIR$/test/MatchFixzer/MemoryTest.java" />
-        <option value="$PROJECT_DIR$/src/MatchFixzer/Memory.java" />
         <option value="$PROJECT_DIR$/src/MatchFixzer/ELO_Calculator.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/memory/p1805823617.csv" />
+        <option value="$PROJECT_DIR$/src/MatchFixzer/Memory.java" />
+        <option value="$PROJECT_DIR$/src/MatchFixzer/Player.java" />
         <option value="$PROJECT_DIR$/src/MatchFixzer/UI.java" />
       </list>
     </option>
@@ -134,7 +128,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
-    <option name="width" value="974" />
+    <option name="width" value="1079" />
     <option name="height" value="1087" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -145,6 +139,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -184,9 +181,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -198,7 +192,10 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -384,6 +381,8 @@
       <workItem from="1540677094672" duration="428000" />
       <workItem from="1540734520410" duration="6411000" />
       <workItem from="1540743476367" duration="5369000" />
+      <workItem from="1540811493904" duration="9716000" />
+      <workItem from="1540821247659" duration="14000" />
     </task>
     <task id="LOCAL-00001" summary="Initial project creation :)">
       <created>1540474741594</created>
@@ -396,47 +395,45 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MemoryTest_testLoadAll - 2018.10.28 at 16h 27m 56s.xml">
-      <configuration name="MemoryTest.testLoadAll" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_MatchFixzer - 2018.10.28 at 16h 28m 05s.xml">
-      <configuration name="All in MatchFixzer" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MemoryTest_testLoadAll - 2018.10.28 at 16h 28m 54s.xml">
-      <configuration name="MemoryTest.testLoadAll" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MemoryTest_testPlayerSave - 2018.10.28 at 18h 38m 53s.xml">
+    <history-entry file="MemoryTest_testPlayerSave - 2018.10.29 at 13h 56m 01s.xml">
       <configuration name="MemoryTest.testPlayerSave" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MemoryTest_testPlayerSave - 2018.10.28 at 18h 38m 55s.xml">
+    <history-entry file="MemoryTest_testPlayerSave - 2018.10.29 at 13h 56m 02s.xml">
       <configuration name="MemoryTest.testPlayerSave" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MemoryTest_testPlayerSave - 2018.10.28 at 18h 38m 57s.xml">
+    <history-entry file="MemoryTest_testPlayerSave - 2018.10.29 at 13h 56m 03s.xml">
       <configuration name="MemoryTest.testPlayerSave" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MemoryTest_testPlayerSave - 2018.10.28 at 18h 38m 59s.xml">
+    <history-entry file="MemoryTest_testPlayerSave - 2018.10.29 at 13h 56m 04s.xml">
       <configuration name="MemoryTest.testPlayerSave" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MemoryTest_testPlayerSave - 2018.10.28 at 18h 43m 08s.xml">
+    <history-entry file="MemoryTest_testPlayerSave - 2018.10.29 at 13h 56m 06s.xml">
       <configuration name="MemoryTest.testPlayerSave" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MemoryTest_testPlayerSave - 2018.10.28 at 18h 43m 12s.xml">
+    <history-entry file="MemoryTest_testPlayerSave - 2018.10.29 at 13h 56m 07s.xml">
       <configuration name="MemoryTest.testPlayerSave" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MemoryTest_testPlayerSave - 2018.10.28 at 18h 43m 29s.xml">
+    <history-entry file="MemoryTest_testPlayerSave - 2018.10.29 at 13h 56m 08s.xml">
+      <configuration name="MemoryTest.testPlayerSave" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MemoryTest_testPlayerSave - 2018.10.29 at 13h 56m 09s.xml">
+      <configuration name="MemoryTest.testPlayerSave" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MemoryTest_testPlayerSave - 2018.10.29 at 13h 56m 10s.xml">
+      <configuration name="MemoryTest.testPlayerSave" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MemoryTest_testPlayerSave - 2018.10.29 at 13h 56m 12s.xml">
       <configuration name="MemoryTest.testPlayerSave" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31736000" />
+    <option name="totallyTimeSpent" value="41466000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="974" height="1087" extended-state="0" />
-    <editor active="true" />
+    <frame x="-7" y="0" width="1079" height="1087" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="bottom" id="Messages" order="4" weight="0.10493827" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info id="Image Layers" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
@@ -444,11 +441,11 @@
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.1718107" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.22016461" />
       <window_info anchor="bottom" id="Terminal" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.21189979" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.19096896" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
@@ -462,6 +459,7 @@
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.32921812" />
+      <window_info anchor="bottom" id="Messages" order="4" weight="0.10493827" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -476,10 +474,110 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="15" />
+      <option name="time" value="18" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/MatchFixzer/UI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#start#0;class#UI#0" />
+            <element signature="method#styleButton#0;class#UI#0" />
+            <element signature="method#setupPrimaryBackground#0;class#UI#0" />
+            <element signature="method#saveAndExit#0;class#UI#0" />
+            <element signature="method#createPlayerUI#0;class#UI#0" />
+            <element signature="method#createPlayer#0;class#UI#0" />
+            <element signature="method#createRankingsUI#0;class#UI#0" />
+            <element signature="method#defaultStyle#0;class#UI#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/MatchFixzer/MemoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MatchFixzer/Memory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1785">
+          <caret line="107" column="21" selection-start-line="107" selection-start-column="21" selection-end-line="107" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="153">
+            <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MatchFixzer/MatchHistory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/MatchFixzer/MatchMakerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/MatchFixzer/MemoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="85">
+            <caret line="5" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="24" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MatchFixzer/UI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1343">
+          <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#start#0;class#UI#0" />
+            <element signature="method#styleButton#0;class#UI#0" />
+            <element signature="method#setupPrimaryBackground#0;class#UI#0" />
+            <element signature="method#saveAndExit#0;class#UI#0" />
+            <element signature="method#createPlayerUI#0;class#UI#0" />
+            <element signature="method#createPlayer#0;class#UI#0" />
+            <element signature="method#createRankingsUI#0;class#UI#0" />
+            <element signature="method#defaultStyle#0;class#UI#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/MatchFixzer/MatchHistory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -560,13 +658,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MatchFixzer.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="44" lean-forward="true" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/MatchFixzer/PlayerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -619,23 +710,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/memory/p460245320.csv" />
-    <entry file="file://$PROJECT_DIR$/src/MatchFixzer/Memory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-578">
-          <caret line="35" column="28" lean-forward="true" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatchFixzer/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="26" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MatchFixzer/ELO_Calculator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1088">
@@ -650,33 +724,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/MatchFixzer/MatchMakerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="85">
-            <caret line="5" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="45" />
+          <first_editor relative-caret-position="153">
+            <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/alien.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/MatchFixzer/MemoryTest.java">
+    <entry file="file://$PROJECT_DIR$/MatchFixzer.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="102">
+          <caret line="6" column="44" lean-forward="true" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memory/p2032399936.csv" />
+    <entry file="file://$PROJECT_DIR$/memory/p1805823617.csv" />
+    <entry file="file://$PROJECT_DIR$/src/MatchFixzer/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="35" lean-forward="true" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MatchFixzer/Memory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1785">
+          <caret line="107" column="21" selection-start-line="107" selection-start-column="21" selection-end-line="107" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/MatchFixzer/MatchMakerTest.java">
+    <entry file="file://$PROJECT_DIR$/test/MatchFixzer/MemoryTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="68">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -685,14 +779,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MatchFixzer/UI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="88" column="31" lean-forward="true" selection-start-line="88" selection-start-column="31" selection-end-line="88" selection-end-column="31" />
+        <state relative-caret-position="17">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#370#371#0" expanded="true" />
-            <element signature="e#398#399#0" expanded="true" />
+            <element signature="method#start#0;class#UI#0" />
             <element signature="method#styleButton#0;class#UI#0" />
             <element signature="method#setupPrimaryBackground#0;class#UI#0" />
+            <element signature="method#saveAndExit#0;class#UI#0" />
+            <element signature="method#createPlayerUI#0;class#UI#0" />
+            <element signature="method#createPlayer#0;class#UI#0" />
+            <element signature="method#createRankingsUI#0;class#UI#0" />
+            <element signature="method#defaultStyle#0;class#UI#0" />
           </folding>
         </state>
       </provider>
@@ -700,9 +798,80 @@
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>10</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>MatchFixzer</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>10</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>
