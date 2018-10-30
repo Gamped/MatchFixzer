@@ -2,13 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1d77d3e-f435-4efc-8af1-93e40db69afc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MatchFixzer/MatchFixzer/Memory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MatchFixzer/MatchFixzer/Memory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MatchFixzer/MatchFixzer/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MatchFixzer/MatchFixzer/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MatchFixzer/MatchFixzer/UI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MatchFixzer/MatchFixzer/UI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MatchFixzer/Memory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MatchFixzer/Memory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MatchFixzer/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MatchFixzer/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MatchFixzer/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MatchFixzer/UI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -24,19 +17,33 @@
       <file leaf-file-name="UI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MatchFixzer/UI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="47" selection-start-line="47" selection-end-line="47" />
+            <state relative-caret-position="2295">
+              <caret line="339" column="92" selection-start-line="339" selection-start-column="92" selection-end-line="339" selection-end-column="92" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#start#0;class#UI#0" />
+                <element signature="method#generateMenuButtons#0;class#UI#0" />
                 <element signature="method#styleButton#0;class#UI#0" />
                 <element signature="method#setupPrimaryBackground#0;class#UI#0" />
                 <element signature="method#saveAndExit#0;class#UI#0" />
                 <element signature="method#createPlayerUI#0;class#UI#0" />
                 <element signature="method#createPlayer#0;class#UI#0" />
+                <element signature="method#createMainMenuUI#0;class#UI#0" />
                 <element signature="method#createRankingsUI#0;class#UI#0" />
+                <element signature="method#addPlayerToSelectedArray#0;class#UI#0" />
+                <element signature="method#generateTeams#0;class#UI#0" />
+                <element signature="class#15443:15680" />
                 <element signature="method#defaultStyle#0;class#UI#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MatchMaker.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MatchFixzer/MatchMaker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2125">
+              <caret line="127" column="28" lean-forward="true" selection-start-line="127" selection-start-column="28" selection-end-line="127" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -139,9 +146,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -181,6 +187,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -383,6 +390,7 @@
       <workItem from="1540743476367" duration="5369000" />
       <workItem from="1540811493904" duration="9716000" />
       <workItem from="1540821247659" duration="14000" />
+      <workItem from="1540903901552" duration="4445000" />
     </task>
     <task id="LOCAL-00001" summary="Initial project creation :)">
       <created>1540474741594</created>
@@ -427,13 +435,14 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41466000" />
+    <option name="totallyTimeSpent" value="45911000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1079" height="1087" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="bottom" id="Messages" order="4" weight="0.10493827" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info id="Image Layers" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
@@ -441,11 +450,11 @@
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.22016461" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.09156378" />
       <window_info anchor="bottom" id="Terminal" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.19096896" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.19096896" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
@@ -459,7 +468,6 @@
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.32921812" />
-      <window_info anchor="bottom" id="Messages" order="4" weight="0.10493827" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -485,12 +493,70 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#UI#0" />
+            <element signature="method#generateMenuButtons#0;class#UI#0" />
             <element signature="method#styleButton#0;class#UI#0" />
             <element signature="method#setupPrimaryBackground#0;class#UI#0" />
             <element signature="method#saveAndExit#0;class#UI#0" />
             <element signature="method#createPlayerUI#0;class#UI#0" />
             <element signature="method#createPlayer#0;class#UI#0" />
+            <element signature="method#createMainMenuUI#0;class#UI#0" />
             <element signature="method#createRankingsUI#0;class#UI#0" />
+            <element signature="method#addPlayerToSelectedArray#0;class#UI#0" />
+            <element signature="method#generateTeams#0;class#UI#0" />
+            <element signature="class#15443:15680" />
+            <element signature="method#defaultStyle#0;class#UI#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/MatchFixzer/MemoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MatchFixzer/Memory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1819">
+          <caret line="107" column="21" selection-start-line="107" selection-start-column="21" selection-end-line="107" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="153">
+            <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MatchFixzer/UI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#start#0;class#UI#0" />
+            <element signature="method#generateMenuButtons#0;class#UI#0" />
+            <element signature="method#styleButton#0;class#UI#0" />
+            <element signature="method#setupPrimaryBackground#0;class#UI#0" />
+            <element signature="method#saveAndExit#0;class#UI#0" />
+            <element signature="method#createPlayerUI#0;class#UI#0" />
+            <element signature="method#createPlayer#0;class#UI#0" />
+            <element signature="method#createMainMenuUI#0;class#UI#0" />
+            <element signature="method#createRankingsUI#0;class#UI#0" />
+            <element signature="method#addPlayerToSelectedArray#0;class#UI#0" />
+            <element signature="method#generateTeams#0;class#UI#0" />
+            <element signature="class#15443:15680" />
             <element signature="method#defaultStyle#0;class#UI#0" />
           </folding>
         </state>
@@ -567,12 +633,17 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#UI#0" />
+            <element signature="method#generateMenuButtons#0;class#UI#0" />
             <element signature="method#styleButton#0;class#UI#0" />
             <element signature="method#setupPrimaryBackground#0;class#UI#0" />
             <element signature="method#saveAndExit#0;class#UI#0" />
             <element signature="method#createPlayerUI#0;class#UI#0" />
             <element signature="method#createPlayer#0;class#UI#0" />
+            <element signature="method#createMainMenuUI#0;class#UI#0" />
             <element signature="method#createRankingsUI#0;class#UI#0" />
+            <element signature="method#addPlayerToSelectedArray#0;class#UI#0" />
+            <element signature="method#generateTeams#0;class#UI#0" />
+            <element signature="class#15443:15680" />
             <element signature="method#defaultStyle#0;class#UI#0" />
           </folding>
         </state>
@@ -686,13 +757,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatchFixzer/MatchMaker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="593">
-          <caret line="127" column="28" lean-forward="true" selection-start-line="127" selection-start-column="28" selection-end-line="127" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Mem.txt" />
     <entry file="file://$PROJECT_DIR$/memory/14690.csv" />
     <entry file="file://$PROJECT_DIR$/src/MatchFixzer/MatchResult.java">
@@ -777,19 +841,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/MatchFixzer/MatchMaker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2125">
+          <caret line="127" column="28" lean-forward="true" selection-start-line="127" selection-start-column="28" selection-end-line="127" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/MatchFixzer/UI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
+        <state relative-caret-position="2295">
+          <caret line="339" column="92" selection-start-line="339" selection-start-column="92" selection-end-line="339" selection-end-column="92" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#UI#0" />
+            <element signature="method#generateMenuButtons#0;class#UI#0" />
             <element signature="method#styleButton#0;class#UI#0" />
             <element signature="method#setupPrimaryBackground#0;class#UI#0" />
             <element signature="method#saveAndExit#0;class#UI#0" />
             <element signature="method#createPlayerUI#0;class#UI#0" />
             <element signature="method#createPlayer#0;class#UI#0" />
+            <element signature="method#createMainMenuUI#0;class#UI#0" />
             <element signature="method#createRankingsUI#0;class#UI#0" />
+            <element signature="method#addPlayerToSelectedArray#0;class#UI#0" />
+            <element signature="method#generateTeams#0;class#UI#0" />
+            <element signature="class#15443:15680" />
             <element signature="method#defaultStyle#0;class#UI#0" />
           </folding>
         </state>

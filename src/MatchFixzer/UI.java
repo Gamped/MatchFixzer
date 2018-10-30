@@ -5,41 +5,19 @@ import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
-import javafx.geometry.VPos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.*;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.StageStyle;
-import javafx.application.Application;
 import javafx.geometry.Insets;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
-import javafx.scene.Group;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.ImagePattern;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-import javafx.scene.*;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -152,7 +130,7 @@ public class UI extends Application {
     private void saveAndExit(){
         mem.saveAllPlayers(allPlayers);
         Platform.exit();
-        System.exit(0);
+        System.exit(42);
     }
 
     // Create the UI for adding players players
@@ -273,22 +251,28 @@ public class UI extends Application {
         HBox listHolder = new HBox();
         Text title = new Text("Create teams:");
         int i = 1;
-
         // Variables for the 3 rows
         VBox row1 = new VBox(), row2 = new VBox(), row3 = new VBox();
         Text tRow1 = new Text("All players"), tRow2 = new Text("Chosen players"), tRow3 = new Text("Teams");
         // First row list
         ListView<String> playerList = new ListView<>();
         ObservableList<String> players = FXCollections.observableArrayList();
+        // Second row list
+        ListView<String> selectedPlayerList = new ListView<>();
+        ObservableList<String> sSelectedPlayers = FXCollections.observableArrayList();
+        // Third row team lists
+        ListView<String> team1 = new ListView<>();
+        ListView<String> team2 = new ListView<>();
         // Linked list to minimize copy-paste code
         LinkedList<VBox> v = new LinkedList<>();
         LinkedList<Text> t = new LinkedList<>();
         LinkedList<Button> b = new LinkedList<>();
         // Buttons
-        Button bSelectPlayer = new Button("Select player");
-
-        // Storage of players
+        Button bSelectPlayer = new Button("Add player");
+        Button bMakeTeams = new Button("Make teams");
+        // Storage of players & teams
         ArrayList<Player> selectedPlayers = new ArrayList<>();
+        ArrayList<Team> teams = null;
 
         // Remove other box if present
         if (base.getChildren().size() > 1){
@@ -298,7 +282,7 @@ public class UI extends Application {
         // Put similar items into LinkedDists to reduce copy/paste styling/setup
         v.add(createTeamsUI); v.add(row1); v.add(row2); v.add(row3);
         t.add(title); t.add(tRow1); t.add(tRow2); t.add(tRow3);
-        b.add(bSelectPlayer);
+        b.add(bSelectPlayer); b.add(bMakeTeams);
 
         // General styling
         defaultStyle(null, createTeamsUI, null);
@@ -306,7 +290,7 @@ public class UI extends Application {
         listHolder.setAlignment(Pos.CENTER);
         listHolder.setSpacing(30);
         for (VBox vb: v){
-            vb.setSpacing(25);
+            vb.setSpacing(20);
             vb.setAlignment(Pos.CENTER);
         }
         for (Text tex: t){
@@ -326,27 +310,24 @@ public class UI extends Application {
             i++;
         }
         playerList.setItems(players);
-        bSelectPlayer.setOnMouseClicked(e -> addPlayerToArray(playerList.getSelectionModel().getSelectedItems().toString(), allPlayers, selectedPlayers));
-
-
-        //
-        // TODO: Add the 2 other rows UI & the team making functionality linked with Matchmaker class!
-        // TODO: Add the 2 other rows UI & the team making functionality linked with Matchmaker class!
-        // TODO: Add the 2 other rows UI & the team making functionality linked with Matchmaker class!
-        // TODO: Add the 2 other rows UI & the team making functionality linked with Matchmaker class!
-        // TODO: Add the 2 other rows UI & the team making functionality linked with Matchmaker class!
-        // TODO: Add the 2 other rows UI & the team making functionality linked with Matchmaker class!
-        // TODO: Add the 2 other rows UI & the team making functionality linked with Matchmaker class!
-        //
-        //
-        // TODO: Maybe add so that players can only be added once
-        //
-        //
-
+        bSelectPlayer.setOnMouseClicked(e -> addPlayerToSelectedArray(playerList.getSelectionModel().getSelectedItems().toString(),
+                                        allPlayers, selectedPlayers, sSelectedPlayers, selectedPlayerList));
 
         // Fill the first row
         row1.getChildren().addAll(tRow1, playerList, bSelectPlayer);
         listHolder.getChildren().add(row1);
+
+        // Add elements for the second row
+        selectedPlayerList.setItems(sSelectedPlayers);
+        bMakeTeams.setOnMouseClicked(e -> generateTeams(teams, selectedPlayers, row3, team1, team2));
+        row2.getChildren().addAll(tRow2, selectedPlayerList, bMakeTeams);
+        listHolder.getChildren().add(row2);
+
+        // Add elements for row 3
+        team1.setMaxHeight(yScreenSize / 3);
+        team2.setMaxHeight(yScreenSize / 3);
+        row3.getChildren().addAll(tRow3, team1, team2);
+        listHolder.getChildren().add(row3);
 
         // Add elements to UI
         createTeamsUI.getChildren().add(title);
@@ -355,18 +336,59 @@ public class UI extends Application {
     }
 
     // Add selected player to array
-    private void addPlayerToArray(String selectionString, ArrayList<Player> from, ArrayList<Player> to){
+    private void addPlayerToSelectedArray(String selectionString, ArrayList<Player> from, ArrayList<Player> to,
+                                          ObservableList<String> list, ListView<String> lw ){
         // Only do stuff if something is selected
         if (!selectionString.equals("[]")) {
+            // Split up the string, in order to get index
             String[] splitSelection = selectionString.split("|");
 
-            to.add(from.get(Integer.parseInt(splitSelection[1])));
+            // Make sure that it is not already in selected players
+            if (to.size() > 0) {
+                for (Player p : to) {
+                    if (from.get(Integer.parseInt(splitSelection[1]) - 1).getPlayerID() == p.getPlayerID()) {
+                        return;
+                    }
+                }
+            }
+
+            // Add it to the selected players & update the list
+            to.add(from.get(Integer.parseInt(splitSelection[1]) - 1));
+            list.add(from.get(Integer.parseInt(splitSelection[1]) - 1).getPlayerName());
+            lw.setItems(list);
         }
+    }
+
+    private void generateTeams(ArrayList<Team> output, ArrayList<Player> input, VBox row,
+                               ListView<String> team1, ListView<String> team2){
+        ObservableList<String> team1Players = FXCollections.observableArrayList();
+        ObservableList<String> team2Players = FXCollections.observableArrayList();
+        ArrayList<ObservableList<String>> stringArray = new ArrayList<>();
+        int i = 0;
+
+        // Make sure input is valid
+        if (input.size() <= 0){return;}
+
+        // Remove UI elements if already there
+
+        // Generate the teams
+        output = mm.generateTeams(input, 50);
+
+        // Loop through the index
+        stringArray.add(team1Players); stringArray.add(team2Players);
+        for (Team t: output ){
+            for (Player p: t.getTeamPlayers()){
+                stringArray.get(i).add(p.getPlayerName());
+            }
+            i++;
+        }
+
+        team1.setItems(team1Players);
+        team2.setItems(team2Players);
     }
 
     // Compare the two players ELO in order to sort the arraylist
     private static Comparator<Player> playerELOCompare = new Comparator<Player>() {
-
         public int compare(Player s1, Player s2) {
             int p1ELO = s1.getELO_Score();
             int p2ELO = s2.getELO_Score();
