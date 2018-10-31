@@ -1,10 +1,11 @@
-# MatchFixzer
-MatchFixzer is a program, which generates teams for matches based on players ELO score.
+# MatchFixzer _- Team generation for games/sports_
+MatchFixzer is a program, which helps with team generation and ranking of players in group based games/sports.
 
-This was a small project to try to find a good way of forming balanced teams when playing games _(specifically OpenRA)_.
+This was a small project to try to find a good way of forming balanced teams when playing games/sports.
 
 *Technical information:*
 
+- Each player has an individual ELO score
 - The formation of teams are done via a simple implementation of the genetic algorithm, based on teams collective ELO average. 
 - The program is written in Java
 - The UI is done in JavaFX _(Coded with JDK 10)_
