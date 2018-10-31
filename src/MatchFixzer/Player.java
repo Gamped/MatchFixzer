@@ -3,13 +3,11 @@ package MatchFixzer;
 // This is the class of an individual player
 public class Player {
     /* FIELDS */
-    // The players ELO score
     private int ELO_Score = 2000;
     // The history of the players matches
-    private MatchHistory mh = null;
+    private MatchHistory mh;
     private String playerName = "Un-named";
     private int playerID = -1;
-
     /* CONSTRUCTORS */
     // Default creation of player
     public Player(){mh = new MatchHistory();}

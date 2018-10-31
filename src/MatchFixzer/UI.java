@@ -34,9 +34,7 @@ public class UI extends Application {
 
     /* START */
     // Make this the main class
-    public static void main(String[] args){
-        launch(args);
-    }
+    public static void main(String[] args){launch(args);}
 
     // The function called at the beginning of the programs lifetime
     public void start(Stage primaryStage){
@@ -114,14 +112,13 @@ public class UI extends Application {
         }
     }
 
-    // Styles & setup primary stage
+    // Styles & setup for primary stage
     private void setupPrimaryBackground(Stage ps, HBox base){
         Image icon = new Image("resources/alien.png");
 
         ps.setTitle("MatchFixzer");
         ps.getIcons().add(icon);
         ps.setScene(new Scene(base, xScreenSize, yScreenSize));
-
         defaultStyle(base, null, null);
     }
 
@@ -173,8 +170,10 @@ public class UI extends Application {
     // Functionality called when a new player is created
     private void createPlayer(String name, HBox base){
         Player p = new Player(name);
+
         allPlayers.add(p);
         mem.savePlayer(p);
+
         createMainMenuUI(base);
     }
 
@@ -278,7 +277,7 @@ public class UI extends Application {
             base.getChildren().remove(base.getChildren().size() - 1);
         }
 
-        // Put similar items into LinkedDists to reduce copy/paste styling/setup
+        // Put similar items into LinkedLists to reduce copy/paste styling/setup
         v.add(createTeamsUI); v.add(row1); v.add(row2); v.add(row3);
         t.add(title); t.add(tRow1); t.add(tRow2); t.add(tRow3);
         b.add(bSelectPlayer); b.add(bMakeTeams);
@@ -371,7 +370,7 @@ public class UI extends Application {
             base.getChildren().remove(base.getChildren().size() - 1);
         }
 
-        // Put similar items into LinkedDists to reduce copy/paste styling/setup
+        // Put similar items into LinkedLists to reduce copy/paste styling/setup
         v.add(reportResultUI); v.add(row1); v.add(row2); v.add(row3);
         t.add(title); t.add(tRow1); t.add(tRow2_1); t.add(tRow2_2);
         b.add(bSelectTeam1); b.add(bSelectTeam2); b.add(bRepWon); b.add(bRepTie); b.add(bRepLost);
@@ -413,8 +412,8 @@ public class UI extends Application {
         listHolder.getChildren().add(row1);
 
         // Add elements for the second row
-        team1List.setItems(team1Selected); team1List.setMaxHeight(yScreenSize / 4);
-        team2List.setItems(team2Selected); team2List.setMaxHeight(yScreenSize / 4);
+        team1List.setItems(team1Selected); team1List.setMaxHeight(yScreenSize / 3);
+        team2List.setItems(team2Selected); team2List.setMaxHeight(yScreenSize / 3);
         row2.getChildren().addAll(tRow2_1, team1List, tRow2_2, team2List);
         listHolder.getChildren().add(row2);
 
@@ -474,9 +473,9 @@ public class UI extends Application {
     // Generates two teams using the MatchMaker class
     private void generateTeams(ArrayList<Team> output, ArrayList<Player> input, VBox row,
                                ListView<String> team1, ListView<String> team2){
+        ArrayList<ObservableList<String>> stringArray = new ArrayList<>();
         ObservableList<String> team1Players = FXCollections.observableArrayList();
         ObservableList<String> team2Players = FXCollections.observableArrayList();
-        ArrayList<ObservableList<String>> stringArray = new ArrayList<>();
         int i = 0;
         MatchMaker mm = new MatchMaker(50, 0.10);
 
@@ -499,7 +498,7 @@ public class UI extends Application {
         team2.setItems(team2Players);
     }
 
-    // Compare the two players ELO in order to sort the arraylist
+    // Compare the two players ELO in order to sort the arrayList
     private static Comparator<Player> playerELOCompare = new Comparator<Player>() {
         public int compare(Player s1, Player s2) {
             int p1ELO = s1.getELO_Score();

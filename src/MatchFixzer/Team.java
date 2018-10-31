@@ -5,7 +5,6 @@ import java.util.ArrayList;
 // A team is a collection of players
 public class Team {
     /* FIELDS */
-    // List of all the players
     private ArrayList<Player> team = new ArrayList<>();
     // Elo split based on same index as player list
     private ArrayList<Double> teamELORatio = new ArrayList<>();
@@ -15,9 +14,7 @@ public class Team {
 
     /* CONSTRUCTORS */
     // Blank team
-    public Team(){
-
-    }
+    public Team(){}
     // Team of 2 players
     public Team(Player p1, Player p2){
         team.add(p1);
@@ -77,6 +74,7 @@ public class Team {
     // Calculate the average ELO on the team
     private void calAverageELO(){
         int totalPlayers = team.size();
+
         // Only cal if more than one player
         if (totalPlayers > 1){
             calTotalELO();
@@ -97,6 +95,7 @@ public class Team {
     // Make team name based on current names
     public void makeDefaultName(){
         String newName = "", s = "";
+
         for (Player p: team){
             s = p.getPlayerName().substring(0,3);
             newName += s;
@@ -108,6 +107,7 @@ public class Team {
     public void calELORatio(){
         Double ratio, tELO;
         calTotalELO();
+
         tELO = new Double(totalELO);
         for (Player p: team){
             ratio = p.getELO_Score() / tELO;

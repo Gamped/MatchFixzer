@@ -14,16 +14,18 @@ public class Memory {
     // Save a players info into a file with their ID
     // Returns true if successful and false if not
     public boolean savePlayer(Player p) {
-        String str = null, fileName = null;
-        BufferedWriter wr = null;
+        String fileName;
+        BufferedWriter wr;
         boolean hasValidID = false;
 
         // Check if ID is set already, else set ID
         while (p.getPlayerID() ==  -1 && !hasValidID){
-            File tester = null;
+            File tester;
+
             // Using random ID, as incremental is easy to guess
             p.setPlayerID(ThreadLocalRandom.current().nextInt(0, Integer.MAX_VALUE));
             tester = new File("memory/p" + Integer.toString(p.getPlayerID()) + ".txt");
+
             // Check if it gave an already existing ID, if not then exit loop
             if (!tester.exists()){
                 hasValidID = true;
@@ -59,11 +61,11 @@ public class Memory {
     // Loads all players
     public ArrayList<Player> loadAllPlayers(){
         ArrayList<Player> pAl = new ArrayList<>();
-        Player p = null;
+        Player p;
         File memFolder = new File("memory/");
         File[] memList = null;
-        BufferedReader br = null;
-        String line = null;
+        BufferedReader br;
+        String line;
         String[] lineContent = null;
 
         // Check for validity
@@ -113,7 +115,6 @@ public class Memory {
                 } catch (Exception e){throw new IllegalArgumentException("UNABLE TO READ [" + f.getName() + "]FROM MEMORY FOLDER");}
             }
         }
-
         return pAl;
     }
 

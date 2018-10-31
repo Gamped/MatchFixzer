@@ -8,14 +8,10 @@ public class PlayerTest {
     Player p = null;
 
     @BeforeEach
-    void setup(){
-        p = new Player();
-    }
+    void setup(){p = new Player();}
 
     @Test
-    void testDefaultPlayerELO(){
-        assertEquals(p.getELO_Score(), 2000);
-    }
+    void testDefaultPlayerELO(){assertEquals(p.getELO_Score(), 2000);}
 
     @Test
     void testDefaultPlayerELO_Impact1(){
@@ -30,9 +26,7 @@ public class PlayerTest {
     }
 
     @Test
-    void testDefaultName(){
-        assertEquals(p.getPlayerName(), "Un-named");
-    }
+    void testDefaultName(){assertEquals(p.getPlayerName(), "Un-named");}
 
     @Test
     void testCustomName(){
