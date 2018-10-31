@@ -7,6 +7,8 @@ import java.util.concurrent.ThreadLocalRandom;
 // A class to handle saving and loading data
 // This is just a quick save system, which can be improved much and made more secure ;)
 public class Memory {
+    String fileLocation = System.getProperty("user.home") + "/Desktop/MatchFixzer";
+
     /* CONSTRUCTORS */
     public Memory(){}
 
@@ -24,7 +26,7 @@ public class Memory {
 
             // Using random ID, as incremental is easy to guess
             p.setPlayerID(ThreadLocalRandom.current().nextInt(0, Integer.MAX_VALUE));
-            tester = new File("memory/p" + Integer.toString(p.getPlayerID()) + ".txt");
+            tester = new File(fileLocation + "/p" + Integer.toString(p.getPlayerID()) + ".txt");
 
             // Check if it gave an already existing ID, if not then exit loop
             if (!tester.exists()){
@@ -33,7 +35,7 @@ public class Memory {
         }
 
         // Make file for player using their unique player ID
-        fileName = "memory/p" + Integer.toString(p.getPlayerID()) + ".csv";
+        fileName = fileLocation + "/p" + Integer.toString(p.getPlayerID()) + ".csv";
 
         // Write to the file
         try {
@@ -62,7 +64,7 @@ public class Memory {
     public ArrayList<Player> loadAllPlayers(){
         ArrayList<Player> pAl = new ArrayList<>();
         Player p;
-        File memFolder = new File("memory/");
+        File memFolder = new File(fileLocation);
         File[] memList = null;
         BufferedReader br;
         String line;
@@ -70,7 +72,7 @@ public class Memory {
 
         // Check for validity
         if (!memFolder.exists() || !memFolder.isDirectory()){
-            throw new IllegalArgumentException("WRONG FILE PATH NAME FOR MEMORY FOLDER");
+            memFolder.mkdir();
         }
 
         // Get all files in folder
