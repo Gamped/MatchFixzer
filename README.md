@@ -1,7 +1,7 @@
-# MatchFixzer
-MatchFixzer is a program, which helps with team generation and ranking of players in group based games.
+# MatchFixzer _- Team generation for games/sports_
+MatchFixzer is a program, which helps with team generation and ranking of players in group based games/sports.
 
-This was a small project to try to find a good way of forming balanced teams when playing games _(specifically OpenRA)_.
+This was a small project to try to find a good way of forming balanced teams when playing games/sports.
 
 *Technical information:*
 
