@@ -30,7 +30,6 @@ public class UI extends Application {
     private static int xScreenSize = (int)(Toolkit.getDefaultToolkit().getScreenSize().width / 1.3);
     private static int yScreenSize = (int)(Toolkit.getDefaultToolkit().getScreenSize().height / 1.3);
     private Memory mem = new Memory();
-    private MatchMaker mm = new MatchMaker(50, 0.15);
     private ArrayList<Player> allPlayers = null;
 
     /* START */
@@ -88,7 +87,7 @@ public class UI extends Application {
 
         // Custom button events
         bMakeTeams.setOnMouseClicked(e -> createTeamsUI(base));
-        //bReportResult.setOnMouseClicked(e -> [FUNCTION]);
+        bReportResult.setOnMouseClicked(e -> reportResult(base));
         bPlayers.setOnMouseClicked(e -> createPlayerUI(base));
         bRankings.setOnMouseClicked(e -> createRankingsUI(base));
         bSaveAndExit.setOnMouseClicked(e -> saveAndExit());
@@ -311,7 +310,7 @@ public class UI extends Application {
         }
         playerList.setItems(players);
         bSelectPlayer.setOnMouseClicked(e -> addPlayerToSelectedArray(playerList.getSelectionModel().getSelectedItems().toString(),
-                                        allPlayers, selectedPlayers, sSelectedPlayers, selectedPlayerList));
+                                        allPlayers, selectedPlayers, sSelectedPlayers, selectedPlayerList, null));
 
         // Fill the first row
         row1.getChildren().addAll(tRow1, playerList, bSelectPlayer);
@@ -335,9 +334,119 @@ public class UI extends Application {
         base.getChildren().add(createTeamsUI);
     }
 
+    // Create the UI for listing off rankings
+    private void reportResult(HBox base){
+        VBox reportResultUI = new VBox();
+        HBox listHolder = new HBox();
+        Text title = new Text("Report result:");
+        int i = 1;
+        // Variables for the 3 rows
+        VBox row1 = new VBox(), row2 = new VBox(), row3 = new VBox();
+        Text tRow1 = new Text("All players"), tRow2_1 = new Text("Team to affect"), tRow2_2 = new Text("Opponent");
+        // First row list
+        ListView<String> playerList = new ListView<>();
+        ObservableList<String> players = FXCollections.observableArrayList();
+        // Second row list
+        ListView<String> team1List = new ListView<>();
+        ObservableList<String> team1Selected = FXCollections.observableArrayList();
+        ListView<String> team2List = new ListView<>();
+        ObservableList<String> team2Selected = FXCollections.observableArrayList();
+        // Linked list to minimize copy-paste code
+        LinkedList<VBox> v = new LinkedList<>();
+        LinkedList<Text> t = new LinkedList<>();
+        LinkedList<Button> b = new LinkedList<>();
+        // Buttons
+        Button bSelectTeam1 = new Button("Add team 1");
+        Button bSelectTeam2 = new Button("Add team 2");
+        Button bRepWon = new Button("Report won");
+        Button bRepTie = new Button("Report tie ");
+        Button bRepLost = new Button("Report lost");
+        // Storage of players & teams
+        ArrayList<Player> selectedPlayers = new ArrayList<>();
+        ArrayList<Player> team1Players = new ArrayList<>();
+        ArrayList<Player> team2Players = new ArrayList<>();
+
+        // Remove other box if present
+        if (base.getChildren().size() > 1){
+            base.getChildren().remove(base.getChildren().size() - 1);
+        }
+
+        // Put similar items into LinkedDists to reduce copy/paste styling/setup
+        v.add(reportResultUI); v.add(row1); v.add(row2); v.add(row3);
+        t.add(title); t.add(tRow1); t.add(tRow2_1); t.add(tRow2_2);
+        b.add(bSelectTeam1); b.add(bSelectTeam2); b.add(bRepWon); b.add(bRepTie); b.add(bRepLost);
+
+        // General styling
+        defaultStyle(null, reportResultUI, null);
+        reportResultUI.setPrefSize(((xScreenSize / 6) * 5) - 10, yScreenSize);
+        listHolder.setAlignment(Pos.CENTER);
+        listHolder.setSpacing(30);
+        for (VBox vb: v){
+            vb.setSpacing(20);
+            vb.setAlignment(Pos.CENTER);
+        }
+        for (Text tex: t){
+            defaultStyle(null,null,tex);
+            tex.setTextAlignment(TextAlignment.CENTER);
+        }
+        title.setStyle("-fx-font-size: 50px");
+        for (Button B: b){
+            B.setOnMousePressed(e -> styleButton(B, true));
+            B.setOnMouseReleased(e -> styleButton(B, false));
+            styleButton(B, false);
+        }
+
+        // Add players into first list & setup button
+        for (Player p: allPlayers) {
+            players.add(i + "| " + p.getPlayerName());
+            i++;
+        }
+        playerList.setItems(players);
+        bSelectTeam1.setOnMouseClicked(e -> addPlayerToSelectedArray(playerList.getSelectionModel().getSelectedItems().toString(),
+                allPlayers, selectedPlayers, team1Selected, team1List, team1Players));
+
+        bSelectTeam2.setOnMouseClicked(e -> addPlayerToSelectedArray(playerList.getSelectionModel().getSelectedItems().toString(),
+                allPlayers, selectedPlayers, team2Selected, team2List, team2Players));
+
+        // Fill the first row
+        row1.getChildren().addAll(tRow1, playerList, bSelectTeam1, bSelectTeam2);
+        listHolder.getChildren().add(row1);
+
+        // Add elements for the second row
+        team1List.setItems(team1Selected); team1List.setMaxHeight(yScreenSize / 4);
+        team2List.setItems(team2Selected); team2List.setMaxHeight(yScreenSize / 4);
+        row2.getChildren().addAll(tRow2_1, team1List, tRow2_2, team2List);
+        listHolder.getChildren().add(row2);
+
+        // Add elements to row 3
+        bRepWon.setOnMouseClicked(e -> reportResult(team1Players, team2Players, MatchResult.WON, base));
+        bRepTie.setOnMouseClicked(e -> reportResult(team1Players, team2Players, MatchResult.TIE, base));
+        bRepLost.setOnMouseClicked(e -> reportResult(team1Players, team2Players, MatchResult.LOST, base));
+        row3.getChildren().addAll(bRepWon, bRepTie, bRepLost);
+        listHolder.getChildren().add(row3);
+
+        // Add elements to UI
+        reportResultUI.getChildren().add(title);
+        reportResultUI.getChildren().add(listHolder);
+        base.getChildren().add(reportResultUI);
+    }
+
+    // Report a result & affect ELO
+    private void reportResult(ArrayList<Player> primary, ArrayList<Player> opponent, MatchResult rForPrimary, HBox base){
+        Team team1 = new Team(primary);
+        Team team2 = new Team(opponent);
+        ArrayList<Team> input = new ArrayList<>();
+        ELO_Calculator ec = new ELO_Calculator();
+
+        input.add(team1); input.add(team2);
+        ec.affectELOAfterResult(input, rForPrimary);
+        mem.saveAllPlayers(allPlayers);
+        createMainMenuUI(base);
+    }
+
     // Add selected player to array
     private void addPlayerToSelectedArray(String selectionString, ArrayList<Player> from, ArrayList<Player> to,
-                                          ObservableList<String> list, ListView<String> lw ){
+                                          ObservableList<String> list, ListView<String> lw, ArrayList<Player> extraSave ){
         // Only do stuff if something is selected
         if (!selectionString.equals("[]")) {
             // Split up the string, in order to get index
@@ -355,21 +464,24 @@ public class UI extends Application {
             // Add it to the selected players & update the list
             to.add(from.get(Integer.parseInt(splitSelection[1]) - 1));
             list.add(from.get(Integer.parseInt(splitSelection[1]) - 1).getPlayerName());
+            if (extraSave != null){
+                extraSave.add(from.get(Integer.parseInt(splitSelection[1]) - 1));
+            }
             lw.setItems(list);
         }
     }
 
+    // Generates two teams using the MatchMaker class
     private void generateTeams(ArrayList<Team> output, ArrayList<Player> input, VBox row,
                                ListView<String> team1, ListView<String> team2){
         ObservableList<String> team1Players = FXCollections.observableArrayList();
         ObservableList<String> team2Players = FXCollections.observableArrayList();
         ArrayList<ObservableList<String>> stringArray = new ArrayList<>();
         int i = 0;
+        MatchMaker mm = new MatchMaker(50, 0.10);
 
         // Make sure input is valid
-        if (input.size() <= 0){return;}
-
-        // Remove UI elements if already there
+        if (input.size() < 1){return;}
 
         // Generate the teams
         output = mm.generateTeams(input, 50);

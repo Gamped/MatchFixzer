@@ -77,8 +77,13 @@ public class Team {
     // Calculate the average ELO on the team
     private void calAverageELO(){
         int totalPlayers = team.size();
-        calTotalELO();
-        averageELO = (double)totalELO / (double)totalPlayers;
+        // Only cal if more than one player
+        if (totalPlayers > 1){
+            calTotalELO();
+            averageELO = (double)totalELO / (double)totalPlayers;
+        } else if (totalPlayers == 1){
+            averageELO = team.get(0).getELO_Score();
+        }
     }
 
     // Calculate the total ELO of the team
